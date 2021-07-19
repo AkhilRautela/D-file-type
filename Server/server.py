@@ -1,7 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 import logging
 import os
-
 from FetchData.Fetch import *
 
 
@@ -42,13 +41,14 @@ def create_server():
 
     app.run("127.0.0.1", 5000)
 
-def create_summary_stats_server(extension_summary,extension_count):
-
+def create_summary_stats_server(extension_summary,extension_count,program_supported_temp):
+    print(program_supported_temp)
     app = Flask(__name__)
 
     @app.route('/')
     def main_page():
-        return render_template("stats.html",extension_count=extension_count,extension_summary=extension_summary)
+        return render_template("stats.html",extension_count=extension_count,extension_summary=extension_summary,
+                            prpgrams = program_supported_temp)
 
     app.run("127.0.0.1", 8000)
 

@@ -1,11 +1,13 @@
 import os
 from collections import defaultdict
 from FetchData.Fetch import fetch_extension_data
+from FetchData.program_supported import program_supported
 from Server.server import create_summary_stats_server
 
 files=[]
 
 extension_count=defaultdict(lambda:0)
+program_supported_temp = defaultdict(lambda:{})
 
 def find_subfolder(path,dist="-"):
     if os.path.isdir(path):
@@ -34,6 +36,8 @@ def check_extension():
         if extension in extension_summary:
             continue
         response = fetch_extension_data(extension)
+        temp = program_supported(extension)
+        program_supported_temp[extension] = temp
         extension_summary[extension]=response
 
     for x in list(extension_summary.keys()):
@@ -41,7 +45,7 @@ def check_extension():
             del extension_summary[x]
             del extension_count[x]
 
-    create_summary_stats_server(extension_summary,extension_count)
+    create_summary_stats_server(extension_summary,extension_count,program_supported_temp)
     
 
 
