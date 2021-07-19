@@ -1,0 +1,99 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+}
+
+.nav {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #6874e8;
+  color: white;
+  font-size: 3rem;
+}
+
+.container{
+    width: 100vw;
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+.stats{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: fit-content;
+}
+
+.first{
+    padding: 10px;
+    font-size: 2rem;
+}
+
+table{
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.summary{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 4;
+    flex-shrink: 1;
+}
+
+.one-item{
+    width: 20vw;
+    height: fit-content;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: column;
+    background-color: rgba(255,255,255,0.7);
+    margin: 10px;
+    border-radius: 20px;
+    color: black;
+}
+
+.heading{
+    font-size: 3rem;
+}
+
+.details{
+    font-size: 2rem;
+}
+
+table, td, tr , th{
+    padding: 3px;
+    border:1px solid rgba(0,0,0,0.7);
+}
+
+.one-item:hover{
+    background-color: orange;
+}
+
+.one-item:hover .heading{
+    color: white;
+}
+

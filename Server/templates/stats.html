@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="{{ url_for('static', filename = 'images/logo.png') }}"
+      rel="icon"
+    />
+    <link
+      href="{{ url_for('static', filename = 'css/stats.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>D file Type</title>
+  </head>
+
+  <body>
+    <div class="nav">D File Type</div>
+    <div class="container">
+        <div class="stats">
+            <div class="first">
+                <table>
+                <tr>
+                    <th> Extension </th>
+                    <th> Count </th>
+                </tr>
+                {% for x,y in extension_count.items() %}
+                    <tr>
+                        <td> {{x}} </td>
+                        <td> {{y}} </td>
+                    </tr>
+                {% endfor %}
+                <table>
+            </div>
+            <div class="second">
+                <canvas>
+                </canvas>
+            </div>
+        </div>
+        <div class="summary">
+            {% for x,y in extension_summary.items() %}
+                <div class="one-item">
+                    <div class="heading">
+                        .{{x}}
+                    </div>
+                    <hr></hr>
+                    <div class="language"> 
+                        {{y[1]}}
+                    </div>  
+                    <div class="deatails">
+                        {{y[0]}}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename = 'js/stats.js') }}"></script>
+  </body>
+</html>

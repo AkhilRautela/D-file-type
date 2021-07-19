@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="{{ url_for('static', filename = 'images/logo.png') }}"
+      rel="icon"
+    />
+    <link
+      href="{{ url_for('static', filename = 'css/main.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>D file Type</title>
+  </head>
+
+  <body>
+    <div class="loading">
+        <div class="circle">
+        </div>
+    </div>
+    <div class="nav">D File Type</div>
+    <div class="container">
+      <input type="file" class="file-upload" />
+      <a href="#">
+        <div class="upload-btn">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+      </a>
+      <br />
+      <span> UPLOAD FILE </span>
+    </div>
+    <div class="details">
+        <div class="extension"> </div>
+        <div class="description">
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+  </body>
+</html>
