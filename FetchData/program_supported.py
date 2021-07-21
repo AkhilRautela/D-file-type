@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 
 def program_supported(extension):
-    print("hello")
     url = 'https://fileinfo.com/extension/'
     html_text = requests.get(url+extension).text
     soup = BeautifulSoup(html_text, 'lxml')

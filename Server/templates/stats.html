@@ -58,6 +58,17 @@
                     <div class="details">
                         {{y[0]}}
                     </div>
+                    <div class="details">
+                        programs supported
+                        {% for ele,ele1 in programs[x].items() %}
+                            {{ele}}
+                            <p>
+                               {% for pro in ele1 %}
+                                    {{pro}}
+                               {% endfor %}
+                            </p>
+                        {% endfor %}
+                    </div>
                 </div>
             {% endfor %}
         </div>

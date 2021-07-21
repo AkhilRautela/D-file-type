@@ -48,7 +48,7 @@ def create_summary_stats_server(extension_summary,extension_count,program_suppor
     @app.route('/')
     def main_page():
         return render_template("stats.html",extension_count=extension_count,extension_summary=extension_summary,
-                            prpgrams = program_supported_temp)
+                            programs = program_supported_temp)
 
     app.run("127.0.0.1", 8000)
 
